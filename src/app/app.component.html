@@ -1,33 +1,56 @@
 <!--<app-table [data]="tableData" [columns]="tableCols"></app-table>-->
 
-
 <table>
   <thead>
-  <tr>
-    <th>
-      <div>First Name</div>
-      <div><input placeholder="search" [(ngModel)]="filters.first_name" (ngModelChange)="onColFilterChanged()" /></div>
-    </th>
-    <th>
-      <div>Last Name</div>
-      <div><input placeholder="search" [(ngModel)]="filters.last_name" (ngModelChange)="onColFilterChanged()" /></div>
-    </th>
-    <th>
-      <div>Email</div>
-      <div><input placeholder="search" [(ngModel)]="filters.email" (ngModelChange)="onColFilterChanged()" /></div>
-    </th>
-    <th>
-      <div>Gender</div>
-      <div><input placeholder="search" [(ngModel)]="filters.gender" (ngModelChange)="onColFilterChanged()" /></div>
-    </th>
-  </tr>
+    <tr>
+      <th>
+        <div>First Name</div>
+        <div>
+          <input
+            placeholder="search"
+            [(ngModel)]="filters.first_name"
+            (ngModelChange)="onColFilterChanged()"
+          />
+        </div>
+      </th>
+      <th>
+        <div>Last Name</div>
+        <div>
+          <input
+            placeholder="search"
+            [(ngModel)]="filters.last_name"
+            (ngModelChange)="onColFilterChanged()"
+          />
+        </div>
+      </th>
+      <th>
+        <div>Email</div>
+        <div>
+          <input
+            placeholder="search"
+            [(ngModel)]="filters.email"
+            (ngModelChange)="onColFilterChanged()"
+          />
+        </div>
+      </th>
+      <th>
+        <div>Gender</div>
+        <div>
+          <input
+            placeholder="search"
+            [(ngModel)]="filters.gender"
+            (ngModelChange)="onColFilterChanged()"
+          />
+        </div>
+      </th>
+    </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let row of tableDataFiltered">
-    <td>{{row.first_name}}</td>
-    <td>{{row.last_name}}</td>
-    <td>{{row.email}}</td>
-    <td>{{row.gender}}</td>
-  </tr>
+    <tr *ngFor="let row of tableDataFiltered">
+      <td>{{ row.first_name }}</td>
+      <td>{{ row.last_name }}</td>
+      <td>{{ row.email }}</td>
+      <td>{{ row.gender }}</td>
+    </tr>
   </tbody>
 </table>

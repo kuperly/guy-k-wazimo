@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { catchError, finalize, mergeMap } from "rxjs/operators";
 import { of, throwError } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { ApiService } from "./core/api.service";
 
 @Component({
   selector: "app-root",
@@ -24,12 +25,13 @@ export class AppComponent implements OnInit {
   public emailModule = "";
   public genderModule = "";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.loading = true;
-    this.http
-      .get("/static.aoni.io/demo/user.json")
+
+    this.apiService
+      .fetchDataFromGoogle()
       .pipe(
         mergeMap(res => {
           this.tableData = this.tableDataFiltered = res;
